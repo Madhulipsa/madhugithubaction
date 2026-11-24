@@ -1,0 +1,24 @@
+#workflow[no indentation required for  naming the workflow]
+# should have name
+name: Hello
+# on tells when workflow should run ( give indentation by tab)
+on:
+  workflow_dispatch:
+#Jobs
+#job tells what the workflow should do , there can be  one or more than one jobs, hence we write jobs
+# should be inside .github/workflows/
+jobs:
+# 1st job (give indentation) 
+  say-hello:
+  #create an ephermal container with ubuntu running
+    runs-on: ubuntu-latest
+    #that emherml container will have steps to execute hence name those steps and use run: run has the command cancel-timeout-minutes: 
+    steps:
+      - name: Say hello to everyone
+        run: echo "helloDosto"
+
+           
+#steps
+#should be inside the job
+#Actions
+#should be inside the step
