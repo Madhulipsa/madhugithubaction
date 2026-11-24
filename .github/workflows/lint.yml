@@ -1,0 +1,23 @@
+# what is the goal of your website
+# Goal: whenever someone changes the python code
+# the linter will check if the syntax , fomat, indentation(linting) is corrcet or not
+name: Auto Linter
+
+on:
+  push:
+    paths:
+      - "**.py"
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout/clone the code
+        uses: actions/checkout@v7
+
+      - name: Install Linter
+        run: pip install ruff
+
+      - name: Run Ruff Linter
+        run: ruff check .
+
